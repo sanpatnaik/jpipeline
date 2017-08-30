@@ -44,7 +44,7 @@ node{
         //stage('Unit Test Results') {
            // junit '**/target/surefire-reports/TEST-*.xml'
             //archive 'target/*.jar'
-        }
+        //}
 
     }
 }
