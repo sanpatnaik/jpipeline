@@ -16,7 +16,7 @@ node{
             if (isUnix()) {
                 sh "'${envPATH}/bin/ant build'"
             } else {
-                bat(/"${envPATH}\bin\ant build/")
+                bat(/"${envPATH}\bin\ant build")
             }
         }
         
