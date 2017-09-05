@@ -6,7 +6,7 @@ node{
     dir('BuildQuality'){
         stage('Preparation'){
                         
-            git 'https://github.com/sanpatnaik/simple-spring.git'
+            git 'https://github.com/sanpatnaik/sampleprj.git'
             //mvnHome = tool 'Maven'
 			envPATH = "${tool 'Ant'}/bin:${env.PATH}"
         }
