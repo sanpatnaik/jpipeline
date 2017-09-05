@@ -14,9 +14,9 @@ node{
         stage('Build') {
             // Run the maven build
             if (isUnix()) {
-                sh "'${envPATH}/bin/mvn' ant build"
+                sh "'${envPATH}/bin/ant build'"
             } else {
-                bat(/"${envPATH}\bin\mvn" ant build/)
+                bat(/"${envPATH}\bin\ant build/")
             }
         }
         
