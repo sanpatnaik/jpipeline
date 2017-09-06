@@ -32,7 +32,7 @@ node{
                     " -Dsonar.projectName='Java :: Sample Prj-ANT' " +
                     " -Dsonar.projectVersion=1.0 " +
                     " -Dsonar.language=java " +
-                    " -Dsonar.sources=. " +
+                    " -Dsonar.sources=. "
                     //" -Dsonar.tests=. " +
                     //" -Dsonar.test.inclusions='**/*Test*/**' " +
                     //" -Dsonar.exclusions='**/*Test*/**' "
