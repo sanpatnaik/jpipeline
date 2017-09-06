@@ -1,12 +1,12 @@
 node{
 
     checkout scm
-	def envPATH
+	def antHome
     dir('BuildQuality'){
         stage('Preparation'){
                         
             git 'https://github.com/sanpatnaik/AntPrj.git'
-            //mvnHome = tool 'Maven'
+            antHome = tool 'Ant'
 			//envPATH = "${tool 'Ant'}/bin:${env.PATH}"
         }
 
@@ -22,13 +22,11 @@ node{
         }
         
         stage('SonarQube Analysis') { 
-           // def mvnHome
-            //mvnHome = tool 'Maven'
+           def mvnHome
+           mvnHome = tool 'Ant'
             withSonarQubeEnv('Sonar') { 
-		    env.PATH = "${tool 'Ant'}/bin:${env.PATH}"
                 if (isUnix()) {
-		    env.PATH = "${tool 'Ant'}/bin:${env.PATH}"
-                    sh "org.sonarsource.scanner.ant:sonarqube-ant-task:2.4:'ant sonar'"+ 
+                    sh "'${AntHome}/bin/ant' ant sonar"+ 
                     " -Dsonar.projectKey=org.sonarqube:java-sonar-ANT " +
                     " -Dsonar.projectKey=org.sonarqube:java-sonar-ANT " +
                     " -Dsonar.projectName='Java :: Sample Prj-ANT' " +
