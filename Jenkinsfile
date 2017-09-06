@@ -25,8 +25,9 @@ node{
            // def mvnHome
             //mvnHome = tool 'Maven'
             withSonarQubeEnv('Sonar') { 
+		    env.PATH = "${tool 'Ant'}/bin:${env.PATH}"
                 if (isUnix()) {
-                    sh "'${env.PATH}/bin/ant' org.sonarsource.scanner.ant:sonarqube-ant-task:2.4:sonar -f build.xml "+ 
+                    sh "org.sonarsource.scanner.ant:sonarqube-ant-task:2.4:ant sonar -f build.xml "+ 
                     " -Dsonar.projectKey=org.sonarqube:java-sonar-ANT " +
                     " -Dsonar.projectKey=org.sonarqube:java-sonar-ANT " +
                     " -Dsonar.projectName='Java :: Sample Prj-ANT' " +
