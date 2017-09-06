@@ -27,7 +27,8 @@ node{
             withSonarQubeEnv('Sonar') { 
 		    env.PATH = "${tool 'Ant'}/bin:${env.PATH}"
                 if (isUnix()) {
-                    sh "org.sonarsource.scanner.ant:sonarqube-ant-task:2.4:ant sonar -f build.xml "+ 
+		    env.PATH = "${tool 'Ant'}/bin:${env.PATH}"
+                    sh "org.sonarsource.scanner.ant:sonarqube-ant-task:2.4:'ant sonar'"+ 
                     " -Dsonar.projectKey=org.sonarqube:java-sonar-ANT " +
                     " -Dsonar.projectKey=org.sonarqube:java-sonar-ANT " +
                     " -Dsonar.projectName='Java :: Sample Prj-ANT' " +
