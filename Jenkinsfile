@@ -22,8 +22,8 @@ node{
         }
         
         stage('SonarQube Analysis') { 
-           def mvnHome
-           mvnHome = tool 'Ant'
+           def antHome
+           antHome = tool 'Ant'
             withSonarQubeEnv('Sonar') { 
                 if (isUnix()) {
                     sh "'${AntHome}/bin/ant' ant sonar"+ 
