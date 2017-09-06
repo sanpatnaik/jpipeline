@@ -14,9 +14,10 @@ node{
             // Run the maven build
             if (isUnix()) {
                 sh "'${envPATH}/bin/ant'"
-            } else {
-                bat(/"${envPATH}/bin/ant")
-            }
+            } 
+		//else {
+               // bat(/"${envPATH}/bin/ant")
+           // }
         }
         
         stage('SonarQube Analysis') { 
