@@ -10,16 +10,11 @@ node{
 			envPATH = "${tool 'Ant'}/bin:${env.PATH}"
         }
 
-        stage('Build') {
-		def antVersion = 'Ant1.10.1'
-		withEnv( ["ANT_HOME=${tool antVersion}"] ) 
-		{
-   		 sh '$ANT_HOME/bin/ant build'
-		}
+	    stage('Build') {
             // Run the maven build
-            //if (isUnix()) {
-                //sh "'${envPATH}/ant build'"
-            //} 
+            if (isUnix()) {
+                sh 'ant build'
+            } 
 		//else {
                // bat(/"${envPATH}/bin/ant")
            // }
