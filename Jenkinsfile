@@ -5,7 +5,7 @@ node{
     dir('BuildQuality'){
         stage('Preparation'){
                         
-            git 'https://github.com/sanpatnaik/sampleprj.git'
+            git 'https://github.com/sanpatnaik/AntPrj.git'
             //mvnHome = tool 'Maven'
 			//envPATH = "${tool 'Ant'}/bin:${env.PATH}"
         }
