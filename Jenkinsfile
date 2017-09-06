@@ -7,13 +7,14 @@ node{
                         
             git 'https://github.com/sanpatnaik/sampleprj.git'
             //mvnHome = tool 'Maven'
-			envPATH = "${tool 'Ant'}/bin:${env.PATH}"
+		AntHome = tool 'Ant'
+			//envPATH = "${tool 'Ant'}/bin:${env.PATH}"
         }
 
 	    stage('Build') {
             // Run the maven build
             if (isUnix()) {
-                sh 'Ant build'
+                sh "'${AntHome}/bin/ant build'"
             } 
 		//else {
                // bat(/"${envPATH}/bin/ant")
