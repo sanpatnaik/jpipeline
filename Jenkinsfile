@@ -14,7 +14,7 @@ node{
             // Run the maven build
             if (isUnix()) {
 		    env.PATH = "${tool 'Ant'}/bin:${env.PATH}"
-                    sh 'ant build'
+                    sh 'ant'
             } 
 		//else {
                // bat(/"${envPATH}/bin/ant")
