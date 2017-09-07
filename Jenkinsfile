@@ -26,16 +26,7 @@ node{
            //antHome = tool 'Ant'
             withSonarQubeEnv('Sonar') { 
                 if (isUnix()) {
-                    sh "'${AntHome}/bin/ant' ant sonar"+ 
-                    " -Dsonar.projectKey=org.sonarqube:java-sonar-ANT " +
-                    " -Dsonar.projectKey=org.sonarqube:java-sonar-ANT " +
-                    " -Dsonar.projectName='Java :: Sample Prj-ANT' " +
-                    " -Dsonar.projectVersion=1.0 " +
-                    " -Dsonar.language=java " +
-                    " -Dsonar.sources=. "
-                    //" -Dsonar.tests=. " +
-                    //" -Dsonar.test.inclusions='**/*Test*/**' " +
-                    //" -Dsonar.exclusions='**/*Test*/**' "
+                    sh 'ant sonar -f build.xml'
                 } 
 		    //else {
                     //bat (/"${Ant_Home}\bin\ant" org.sonarsource.scanner.maven:sonar-maven-plugin:3.3.0.603:sonar -f pom.xml -Dsonar.projectKey=org.sonarqube:java-sonar-ANT -Dsonar.projectName="Java :: Simple Spring Project-ANT" /)
