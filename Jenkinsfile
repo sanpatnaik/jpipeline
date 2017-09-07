@@ -26,7 +26,8 @@ node{
            //antHome = tool 'Ant'
             withSonarQubeEnv('Sonar') { 
                 if (isUnix()) {
-                    sh 'ant sonar -f build.xml'
+		    env.PATH = "${tool 'Ant'}/bin:${env.PATH}"
+                    sh 'ant sonar'
                 } 
 		    //else {
                     //bat (/"${Ant_Home}\bin\ant" org.sonarsource.scanner.maven:sonar-maven-plugin:3.3.0.603:sonar -f pom.xml -Dsonar.projectKey=org.sonarqube:java-sonar-ANT -Dsonar.projectName="Java :: Simple Spring Project-ANT" /)
